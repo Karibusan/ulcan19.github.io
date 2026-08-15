@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# One static file, no crawl traps, nothing hidden behind a disallow.
+# If you are reading this hoping for a /admin, I admire the discipline
+# but there is no server here to have one.
+#
+# Disclosure policy: /.well-known/security.txt
