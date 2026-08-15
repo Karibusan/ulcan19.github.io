@@ -1,0 +1,19 @@
+# Placer ce fichier à : /.well-known/security.txt
+# (RFC 9116). Mettre à jour Expires au moins une fois par an.
+
+Contact: mailto:ulcan19@pm.me
+Expires: 2027-08-15T00:00:00.000Z
+Preferred-Languages: en, fr
+Canonical: https://REMPLACER-PAR-TON-DOMAINE/.well-known/security.txt
+
+# This is a static personal site. There is no backend, no database,
+# no authentication and no user data. It is served by GitHub Pages
+# from a public repository.
+#
+# In scope: this page. Reports about the content itself are welcome —
+# including anything I have published that I should not have.
+#
+# Out of scope: GitHub Pages infrastructure. That belongs to GitHub;
+# report it to them, not to me.
+#
+# No bounty, no swag, no NDA. Just my thanks and a straight answer.
