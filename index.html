@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yan Urquiza — Cyber Security Engineer</title>
+<meta name="description" content="Cyber security engineer. Security operations, detection engineering and security architecture. Sole owner of the security function at Stock in the Channel.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Yan Urquiza — Cyber Security Engineer">
+<meta property="og:description" content="I design security systems that answer a specific set of constraints — and I run the one I built.">
+<meta property="og:type" content="profile">
+<!-- STYLE:START -->
+<style>
+:root{
+  --bg:#0a0c0e; --bg-2:#101317; --line:#1e242b; --line-2:#2a323b;
+  --fg:#dfe5ec; --fg-dim:#98a3b0; --fg-faint:#68737f;
+  --accent:#7aa2f7; --accent-dim:#3d5a8a;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,"JetBrains Mono",Menlo,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  --measure:68ch;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:var(--sans); font-size:16.5px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+a:hover{border-bottom-color:var(--accent)}
+
+/* lang switch */
+.langbar{position:sticky;top:0;z-index:20;background:rgba(10,12,14,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.langbar .wrap{display:flex;justify-content:space-between;align-items:center;height:52px}
+.sig{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-faint)}
+.langs{display:flex;gap:2px}
+.langs button{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
+  background:transparent;color:var(--fg-faint);border:1px solid var(--line);
+  padding:5px 11px;cursor:pointer;transition:.15s;
+}
+.langs button:first-child{border-radius:3px 0 0 3px}
+.langs button:last-child{border-radius:0 3px 3px 0;border-left:0}
+.langs button[aria-pressed="true"]{color:var(--bg);background:var(--accent);border-color:var(--accent)}
+
+/* hero */
+header.hero{padding:88px 0 64px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 20px}
+h1{font-size:clamp(38px,6.2vw,62px);line-height:1.04;letter-spacing:-.025em;margin:0 0 26px;font-weight:600}
+.tagline{font-size:clamp(19px,2.5vw,23px);line-height:1.5;color:var(--fg);max-width:30ch;margin:0 0 22px;font-weight:400}
+.sub{color:var(--fg-dim);max-width:var(--measure);margin:0 0 36px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.cta a{
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;
+  border:1px solid var(--line-2);border-radius:3px;padding:10px 16px;color:var(--fg-dim);
+  transition:.15s;
+}
+.cta a:hover{color:var(--fg);border-color:var(--accent-dim);background:var(--bg-2)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));border-bottom:1px solid var(--line)}
+.stat{padding:26px 0 28px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat .n{font-family:var(--mono);font-size:26px;color:var(--accent);letter-spacing:-.02em;display:block;margin-bottom:5px}
+.stat .l{font-size:13px;color:var(--fg-faint);line-height:1.4;padding-right:18px;display:block}
+
+/* sections */
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+.sec-label{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg-faint);margin:0 0 34px;display:flex;align-items:center;gap:14px}
+.sec-label::after{content:"";flex:1;height:1px;background:var(--line)}
+h2{font-size:clamp(25px,3.4vw,34px);line-height:1.22;letter-spacing:-.02em;margin:0 0 16px;font-weight:600}
+h3{font-size:19px;line-height:1.35;margin:0 0 10px;font-weight:600;letter-spacing:-.01em}
+p{margin:0 0 16px}
+.lead{font-size:18.5px;color:var(--fg-dim);max-width:var(--measure)}
+
+/* cases */
+.cases{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.case{background:var(--bg);padding:34px 30px;transition:.2s}
+.case:hover{background:var(--bg-2)}
+.case .tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.case p{color:var(--fg-dim);margin:0;font-size:15.5px}
+@media(min-width:820px){.cases{grid-template-columns:repeat(3,1fr)}}
+
+/* principles */
+.principles{display:grid;gap:32px}
+@media(min-width:820px){.principles{grid-template-columns:repeat(3,1fr);gap:44px}}
+.principle{border-top:2px solid var(--accent);padding-top:20px}
+.principle p{color:var(--fg-dim);font-size:15.5px;margin:0}
+
+/* capability grid */
+.caps{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(min-width:700px){.caps{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.caps{grid-template-columns:repeat(3,1fr)}}
+.cap{background:var(--bg);padding:24px 22px}
+.cap h4{font-size:14.5px;margin:0 0 8px;font-weight:600;letter-spacing:-.005em}
+.cap p{font-size:13.5px;color:var(--fg-faint);line-height:1.55;margin:0}
+
+/* timeline */
+.tl{border-left:1px solid var(--line-2);margin-left:6px}
+.tl-item{position:relative;padding:0 0 32px 30px}
+.tl-item::before{content:"";position:absolute;left:-4.5px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--line-2)}
+.tl-item.now::before{background:var(--accent);box-shadow:0 0 0 4px rgba(122,162,247,.14)}
+.tl-date{font-family:var(--mono);font-size:12px;color:var(--fg-faint);letter-spacing:.06em;display:block;margin-bottom:4px}
+.tl-role{font-size:16.5px;font-weight:600;margin:0 0 2px}
+.tl-org{font-size:14.5px;color:var(--fg-dim);margin:0}
+
+/* two col */
+.two{display:grid;gap:44px}
+@media(min-width:860px){.two{grid-template-columns:1.15fr 1fr;gap:64px}}
+.card{border:1px solid var(--line);border-radius:4px;padding:26px 24px;background:var(--bg-2)}
+.card h4{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-faint);margin:0 0 16px;font-weight:400}
+ul.clean{list-style:none;margin:0;padding:0}
+ul.clean li{padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+ul.clean li:last-child{border-bottom:0;padding-bottom:0}
+ul.clean li span{display:block;color:var(--fg-faint);font-size:13.5px;margin-top:3px}
+
+/* footer */
+footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
+.foot-grid{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start}
+.foot-note{font-family:var(--mono);font-size:11.5px;line-height:1.7;color:var(--fg-faint);max-width:44ch}
+[hidden]{display:none!important}
+</style>
+<!-- STYLE:END -->
+</head>
+<body>
+
+<div class="langbar">
+  <div class="wrap">
+    <span class="sig">Yan Urquiza</span>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<header class="hero">
+  <p class="eyebrow"
+     data-en="Cyber Security Engineer — Security Operations &amp; Architecture"
+     data-fr="Ingénieur cybersécurité — Sécurité opérationnelle et architecture"></p>
+  <h1>Yan Urquiza</h1>
+  <p class="tagline"
+     data-en="I design security systems that answer a specific set of constraints — and I run the one I built."
+     data-fr="Je conçois des systèmes de sécurité qui répondent à un jeu de contraintes précis. J'opère celui que j'ai construit."></p>
+  <p class="sub"
+     data-en="Sole owner of the security function at Stock in the Channel: around 160 endpoints and 150 hosted e-commerce storefronts, with posture reported directly to both CEOs and the CTO. Twenty years building systems before I started defending them."
+     data-fr="Seul responsable de la fonction sécurité chez Stock in the Channel : environ 160 postes et 150 boutiques e-commerce hébergées, avec un reporting de la posture directement aux deux PDG et au CTO. Vingt ans à construire des systèmes avant de les défendre."></p>
+  <nav class="cta">
+    <a href="https://uk.linkedin.com/in/yanurquiza" rel="me">LinkedIn</a>
+    <a href="https://github.com/gensecaihq/Wazuh-MCP-Server" rel="noopener">Wazuh-MCP-Server</a>
+    <a href="mailto:ulcan19@pm.me" data-en="Email" data-fr="Écrire"></a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">
+    <span class="n">~160</span>
+    <span class="l" data-en="endpoints defended by a single-analyst SOC" data-fr="postes défendus par un SOC à un seul analyste"></span>
+  </div>
+  <div class="stat">
+    <span class="n">~150</span>
+    <span class="l" data-en="hosted e-commerce storefronts in scope" data-fr="boutiques e-commerce hébergées dans le périmètre"></span>
+  </div>
+  <div class="stat">
+    <span class="n">20</span>
+    <span class="l" data-en="years of engineering before the security work" data-fr="ans d'ingénierie avant le travail de sécurité"></span>
+  </div>
+  <div class="stat">
+    <span class="n">27001</span>
+    <span class="l" data-en="ISO/IEC 27001:2022 — security function through audit, 2026" data-fr="ISO/IEC 27001:2022 — fonction sécurité auditée, 2026"></span>
+  </div>
+</div>
+
+<section id="work">
+  <p class="sec-label" data-en="Selected work" data-fr="Travaux choisis"></p>
+  <h2 data-en="Three problems worth the detail" data-fr="Trois problèmes qui méritent le détail"></h2>
+  <p class="lead" data-en="Not a list of tools. Three occasions where the answer was not the obvious one."
+     data-fr="Pas une liste d'outils. Trois occasions où la bonne réponse n'était pas l'évidente."></p>
+  <div class="cases" style="margin-top:34px">
+    <article class="case">
+      <p class="tag" data-en="Malware analysis · Detection" data-fr="Analyse de malware · Détection"></p>
+      <h3 data-en="A skimmer that hid its C2 on a blockchain" data-fr="Un skimmer qui cachait son C2 sur une blockchain"></h3>
+      <p data-en="A card-skimming injection on a production storefront. I statically deobfuscated the payload and found an EtherHiding loader resolving command-and-control through a smart contract — no domain to seize, no IP to block. Detection shipped the same session."
+         data-fr="Injection de skimming bancaire sur une boutique en production. Désobfuscation statique de la charge utile : un loader EtherHiding résolvant son command-and-control via un contrat intelligent — pas de domaine à saisir, pas d'IP à bloquer. Détection livrée dans la même session."></p>
+    </article>
+    <article class="case">
+      <p class="tag" data-en="Threat intelligence · Board reporting" data-fr="Renseignement · Reporting conseil"></p>
+      <h3 data-en="The national alert that was wrong — and what I shipped anyway" data-fr="L'alerte nationale qui se trompait — et ce que j'ai livré quand même"></h3>
+      <p data-en="The UK NCSC notified us as the victim of a state-sponsored actor. WHOIS ownership, external scan profiling and actor TTP analysis established high-confidence misattribution. I delivered the formal TLP:AMBER assessment to the board — then deployed the IOC detection regardless, because high confidence is not certainty."
+         data-fr="Le NCSC britannique nous a notifiés comme victimes d'un acteur étatique. WHOIS, profilage par scan externe et analyse des TTP de l'acteur ont établi une mauvaise attribution avec un haut niveau de confiance. Évaluation formelle TLP:AMBER remise au conseil — puis détection IOC déployée malgré tout, parce qu'un haut niveau de confiance n'est pas une certitude."></p>
+    </article>
+    <article class="case">
+      <p class="tag" data-en="Architecture · Applied AI, local-first" data-fr="Architecture · IA appliquée, en local"></p>
+      <h3 data-en="One analyst, 160 hosts: the constraint that designed the platform" data-fr="Un analyste, 160 hôtes : la contrainte qui a conçu la plateforme"></h3>
+      <p data-en="Layered deduplication — exact-hash, burst correlation, vector semantic similarity — with thresholds calibrated by manual precision sampling rather than guesswork. Nothing is discarded: suppressed alerts stay in the SIEM and I review the suppressed set weekly. Triage runs on self-hosted inference by design, so hostnames, accounts and payloads never leave the estate."
+         data-fr="Déduplication en couches — hash exact, corrélation de rafales, similarité sémantique vectorielle — seuils calibrés par échantillonnage manuel plutôt qu'au jugé. Rien n'est jeté : les alertes supprimées restent dans le SIEM et je revois l'ensemble chaque semaine. Le triage tourne sur de l'inférence auto-hébergée par conception : noms d'hôtes, comptes et charges utiles ne quittent jamais le parc."></p>
+    </article>
+  </div>
+</section>
+
+<section id="approach">
+  <p class="sec-label" data-en="How I work" data-fr="Ma façon de travailler"></p>
+  <div class="principles">
+    <div class="principle">
+      <h3 data-en="Constraints before tools" data-fr="La contrainte avant l'outil"></h3>
+      <p data-en="Every component of the platform is a choice I had to justify against a stated requirement — licensing, data residency, threat model — not a feature list. A new tool has to answer a constraint the current one fails before it goes near production."
+         data-fr="Chaque composant de la plateforme est un choix que j'ai dû justifier au regard d'une exigence réelle — licences, résidence des données, modèle de menace — pas d'une liste de fonctionnalités. Un nouvel outil doit répondre à une contrainte que l'actuel ne couvre pas avant d'approcher la production."></p>
+    </div>
+    <div class="principle">
+      <h3 data-en="Honest about failure modes" data-fr="Honnête sur ses modes de défaillance"></h3>
+      <p data-en="A source that ingests but mis-parses is worse than one that does not ingest at all: you believe you have coverage. I once requalified my own root cause analysis mid-incident when the evidence contradicted it, stopping a mitigation that would have made things worse."
+         data-fr="Une source qui ingère mal est pire qu'une source absente : on croit avoir la couverture. J'ai requalifié mon propre diagnostic de cause racine en pleine gestion d'incident, sur preuves, arrêtant une mesure corrective qui aurait aggravé les choses."></p>
+    </div>
+    <div class="principle">
+      <h3 data-en="Built to be handed over" data-fr="Construit pour être transmis"></h3>
+      <p data-en="Documented well enough that someone else could operate it: a 38-page versioned specification, and runbooks written for named colleagues so each of them can run their own controls without me."
+         data-fr="Documenté pour qu'un autre puisse l'opérer : une spécification versionnée de 38 pages, et des runbooks écrits pour que des collègues nommés opèrent leurs contrôles sans moi."></p>
+    </div>
+  </div>
+</section>
+
+<section id="capabilities">
+  <p class="sec-label" data-en="Capabilities" data-fr="Compétences"></p>
+  <div class="caps">
+    <div class="cap">
+      <h4 data-en="Security architecture under constraint" data-fr="Architecture de sécurité sous contrainte"></h4>
+      <p data-en="Sole architect of a production platform. Phased delivery, local-first inference for data sovereignty, deliberate reuse over novelty."
+         data-fr="Seul architecte d'une plateforme en production. Livraison par phases, inférence locale pour la souveraineté des données, réutilisation délibérée plutôt que nouveauté."></p>
+    </div>
+    <div class="cap">
+      <h4 data-en="Detection engineering &amp; alert fidelity" data-fr="Ingénierie de détection et qualité des alertes"></h4>
+      <p data-en="Custom Wazuh rulesets and decoders, MITRE ATT&amp;CK-mapped and validated pre-deployment. False-positive engineering, threshold calibration, scheduled review of suppressed alerts."
+         data-fr="Règles et décodeurs Wazuh sur mesure, mappés MITRE ATT&amp;CK et validés avant déploiement. Traitement des faux positifs, calibration des seuils, revue périodique des alertes supprimées."></p>
+    </div>
+    <div class="cap">
+      <h4 data-en="Security operations &amp; tooling ownership" data-fr="Opérations de sécurité et maîtrise de l'outillage"></h4>
+      <p data-en="SIEM manager and indexer across ~160 agents: enrolment hardening, RBAC, upgrade lifecycle, monitoring the monitoring."
+         data-fr="Manager et indexeur SIEM sur ~160 agents : durcissement de l'enrôlement, RBAC, cycle de mise à jour, supervision de l'outillage lui-même."></p>
+    </div>
+    <div class="cap">
+      <h4 data-en="Log ingestion &amp; source integration" data-fr="Ingestion de logs et intégration de sources"></h4>
+      <p data-en="Firewall syslog, Windows and Linux telemetry, application and scan output. Custom decoders where no native support exists, validated end to end before production."
+         data-fr="Syslog pare-feu, télémétrie Windows et Linux, sorties applicatives et de scan. Décodeurs sur mesure en l'absence de support natif, validés de bout en bout avant production."></p>
+    </div>
+    <div class="cap">
+      <h4 data-en="Incident response &amp; analysis" data-fr="Réponse à incident et analyse"></h4>
+      <p data-en="Technical SME through major incidents to formal report. Root cause analysis, IOC extraction, static malware analysis, digital forensics."
+         data-fr="Référent technique de l'incident majeur jusqu'au rapport formel. Analyse de cause racine, extraction d'IOC, analyse statique de malware, forensique."></p>
+    </div>
+    <div class="cap">
+      <h4 data-en="Automation &amp; applied AI, local-first" data-fr="Automatisation et IA, en local d'abord"></h4>
+      <p data-en="n8n orchestration at production scale; Python/FastAPI, Redis, Qdrant vector search; self-hosted LLM inference with a human in the loop on every response decision."
+         data-fr="Orchestration n8n à l'échelle de production ; Python/FastAPI, Redis, recherche vectorielle Qdrant ; inférence LLM auto-hébergée, humain dans la boucle sur chaque décision de réponse."></p>
+    </div>
+    <div class="cap">
+      <h4 data-en="Offensive &amp; attack surface" data-fr="Offensif et surface d'attaque"></h4>
+      <p data-en="Authorised penetration testing end to end — scoping, authorisation, grey-box execution, dual-audience reporting, re-test. External attack surface monitoring across 76 public IPs and 545 services."
+         data-fr="Tests d'intrusion autorisés de bout en bout — cadrage, autorisation, boîte grise, rapports interne et client, re-test. Surveillance de la surface externe sur 76 IP publiques et 545 services."></p>
+    </div>
+    <div class="cap">
+      <h4 data-en="Cloud, Windows, Linux &amp; networking" data-fr="Cloud, Windows, Linux et réseau"></h4>
+      <p data-en="Azure (AZ-900): virtual networks, load balancers, CDN, DNS. Linux at fleet scale, SonicWall NSA, iptables, WireGuard, Cloudflare. Telecoms core network background."
+         data-fr="Azure (AZ-900) : réseaux virtuels, répartiteurs de charge, CDN, DNS. Linux à l'échelle d'un parc, SonicWall NSA, iptables, WireGuard, Cloudflare. Passé en cœur de réseau télécom."></p>
+    </div>
+    <div class="cap">
+      <h4 data-en="Assurance, governance &amp; communication" data-fr="Assurance, gouvernance et communication"></h4>
+      <p data-en="Audited against ISO/IEC 27001:2022 as the security function owner. Board-level reporting, dual-audience technical writing, directing security work without line authority. NIST CSF, CIS Controls, UK GDPR."
+         data-fr="Audité au titre de l'ISO/IEC 27001:2022 comme responsable de la fonction sécurité. Reporting au conseil, rédaction à double audience, pilotage sans autorité hiérarchique. NIST CSF, CIS Controls, RGPD."></p>
+    </div>
+  </div>
+</section>
+
+<section id="path">
+  <div class="two">
+    <div>
+      <p class="sec-label" data-en="Path" data-fr="Parcours"></p>
+      <div class="tl">
+        <div class="tl-item now">
+          <span class="tl-date">2022 — <span data-en="present" data-fr="aujourd'hui"></span></span>
+          <p class="tl-role">Security Operations / DevSecOps</p>
+          <p class="tl-org">Stock in the Channel, London</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">2020 — 2022</span>
+          <p class="tl-role">Senior DevOps Engineer</p>
+          <p class="tl-org">Bordeaux Index, London</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">2016 — 2020</span>
+          <p class="tl-role">Senior Software Engineer</p>
+          <p class="tl-org">Bordeaux Index, London</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">2014 — 2016</span>
+          <p class="tl-role">Technical Team Lead</p>
+          <p class="tl-org">Telecom Plus / Utility Warehouse, London</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">2012 — 2014</span>
+          <p class="tl-role">Senior PHP Developer</p>
+          <p class="tl-org">Telecom Plus, London</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">2007 — 2011</span>
+          <p class="tl-role" data-en="Telecoms core network engineer" data-fr="Ingénieur cœur de réseau télécom"></p>
+          <p class="tl-org" data-en="SFR / Nokia Siemens R4 migration — Davidson, Astek (Lyon)" data-fr="Migration SFR / Nokia Siemens R4 — Davidson, Astek (Lyon)"></p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="sec-label" data-en="Credentials" data-fr="Diplômes"></p>
+      <div class="card" style="margin-bottom:20px">
+        <h4 data-en="Education &amp; certification" data-fr="Formation et certifications"></h4>
+        <ul class="clean">
+          <li>MSc Cyber Security &amp; Digital Forensics
+            <span data-en="University of Portsmouth, 2023 — Merit. Final project: a centralised log management and intrusion detection platform across a live e-commerce estate. The direct precursor to the SOC I operate today."
+                  data-fr="University of Portsmouth, 2023 — mention Merit. Projet de fin d'études : plateforme centralisée de gestion des logs et de détection d'intrusion sur un parc e-commerce en production. Le précurseur direct du SOC que j'opère aujourd'hui."></span>
+          </li>
+          <li>Microsoft Certified: Azure Fundamentals (AZ-900)
+            <span data-en="2026" data-fr="2026"></span>
+          </li>
+          <li>ISO/IEC 27001:2022
+            <span data-en="Represented the security function through certification, awarded July 2026." data-fr="Représentation de la fonction sécurité dans la certification, obtenue en juillet 2026."></span>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 data-en="Writing &amp; open source" data-fr="Écrits et open source"></h4>
+        <ul class="clean">
+          <li data-en="Contributor, Wazuh-MCP-Server" data-fr="Contributeur, Wazuh-MCP-Server"></li>
+          <li data-en="Author, Open Footprint GPT — a public agent for estimating and reducing digital footprint" data-fr="Auteur d'Open Footprint GPT — agent public d'estimation et de réduction de l'empreinte numérique"></li>
+          <li data-en="Platform documentation, formal incident reports, TLP:AMBER threat assessments, penetration test reports, operational runbooks, a non-technical security guide for client store owners."
+              data-fr="Documentation de plateforme, rapports d'incident formels, évaluations de menace TLP:AMBER, rapports de test d'intrusion, runbooks opérationnels, guide de sécurité non technique pour propriétaires de boutiques clientes.">
+            <span data-en="All internal or client-confidential — structure, method and audience happily discussed in conversation." data-fr="Tous internes ou confidentiels client — structure, méthode et audience discutables de vive voix."></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <p style="margin:0 0 6px;color:var(--fg)">
+        <a href="mailto:ulcan19@pm.me">ulcan19@pm.me</a> &nbsp;·&nbsp;
+        <a href="https://uk.linkedin.com/in/yanurquiza" rel="me">LinkedIn</a>
+      </p>
+      <p style="margin:0" data-en="French (native) · English (fluent) · Japanese (elementary). Based in the UK — full right to work."
+         data-fr="Français (langue maternelle) · Anglais (courant) · Japonais (notions). Basé au Royaume-Uni — plein droit de travail."></p>
+    </div>
+    <p class="foot-note"
+       data-en="No trackers. No analytics. No third-party fonts or scripts. One static file, served as-is — which felt like the only defensible way to build a security engineer's page."
+       data-fr="Aucun traceur. Aucune analytique. Aucune police ni script tiers. Un seul fichier statique, servi tel quel — la seule façon défendable de construire la page d'un ingénieur sécurité."></p>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var nodes = document.querySelectorAll('[data-en],[data-fr]');
+  var buttons = document.querySelectorAll('.langs button');
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    nodes.forEach(function(n){
+      var v = n.getAttribute('data-' + lang);
+      if (v === null) return;
+      var kids = n.querySelectorAll('[data-en],[data-fr]');
+      if (kids.length){
+        // node has translatable children: only replace its own leading text node
+        var first = n.firstChild;
+        if (first && first.nodeType === 3) first.nodeValue = v;
+        return;
+      }
+      n.textContent = v;
+    });
+    buttons.forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+    });
+    try { localStorage.setItem('yu-lang', lang); } catch(e){}
+  }
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.dataset.lang); });
+  });
+  var saved = null;
+  try { saved = localStorage.getItem('yu-lang'); } catch(e){}
+  if (!saved) saved = (navigator.language || 'en').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en';
+  setLang(saved);
+})();
+</script>
+</body>
+</html>
