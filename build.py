@@ -69,9 +69,9 @@ HEAD = """<!DOCTYPE html>
 <div class="wrap">
 {body}
 <footer>
-  <p><a href="/notes/" data-en="All notes" data-fr="Toutes les notes"></a> &nbsp;·&nbsp; <a href="/" data-en="Home" data-fr="Accueil"></a> &nbsp;·&nbsp; <a href="mailto:ulcan19@pm.me">ulcan19@pm.me</a></p>
+  <p><a href="/notes/" data-en="All notes" data-fr="Toutes les notes">All notes</a> &nbsp;·&nbsp; <a href="/" data-en="Home" data-fr="Accueil">Home</a> &nbsp;·&nbsp; <a href="mailto:ulcan19@pm.me">ulcan19@pm.me</a></p>
   <p class="foot-note" data-en="No trackers. No analytics. No third-party fonts or scripts. Static files, served as-is."
-     data-fr="Aucun traceur. Aucune analytique. Aucune police ni script tiers. Des fichiers statiques, servis tels quels."></p>
+     data-fr="Aucun traceur. Aucune analytique. Aucune police ni script tiers. Des fichiers statiques, servis tels quels.">No trackers. No analytics. No third-party fonts or scripts. Static files, served as-is.</p>
 </footer>
 </div>
 <script>
@@ -82,11 +82,11 @@ HEAD = """<!DOCTYPE html>
 """
 
 ARTICLE_BODY = """<header class="post-head">
-  <p class="eyebrow" data-en="Note &middot; Detection engineering" data-fr="Note &middot; Ingénierie de détection"></p>
+  <p class="eyebrow" data-en="Note &middot; Detection engineering" data-fr="Note &middot; Ingénierie de détection">Note &middot; Detection engineering</p>
   <h1 data-en="Guardrails retrieved by similarity are guardrails that don&rsquo;t fire"
-      data-fr="Un garde-fou récupéré par similarité est un garde-fou qui ne se déclenche pas"></h1>
+      data-fr="Un garde-fou récupéré par similarité est un garde-fou qui ne se déclenche pas">Guardrails retrieved by similarity are guardrails that don&rsquo;t fire</h1>
   <p class="standfirst" data-en="Agent memory that stores rules and knowledge in one vector index has a silent control failure built into it."
-     data-fr="Une mémoire d&rsquo;agent qui range règles et connaissances dans un même index vectoriel embarque une défaillance de contrôle silencieuse."></p>
+     data-fr="Une mémoire d&rsquo;agent qui range règles et connaissances dans un même index vectoriel embarque une défaillance de contrôle silencieuse.">Agent memory that stores rules and knowledge in one vector index has a silent control failure built into it.</p>
   <p class="meta"><time datetime="2026-08-28">2026-08-28</time></p>
 </header>
 
@@ -98,10 +98,10 @@ ARTICLE_BODY = """<header class="post-head">
 """
 
 INDEX_BODY = """<header class="post-head">
-  <p class="eyebrow" data-en="Notes" data-fr="Notes"></p>
-  <h1 data-en="Notes" data-fr="Notes"></h1>
+  <p class="eyebrow" data-en="Notes" data-fr="Notes">Notes</p>
+  <h1 data-en="Notes" data-fr="Notes">Notes</h1>
   <p class="standfirst" data-en="Occasional writing on detection engineering, security architecture, and the systems I build."
-     data-fr="Écrits occasionnels sur l&rsquo;ingénierie de détection, l&rsquo;architecture de sécurité, et les systèmes que je construis."></p>
+     data-fr="Écrits occasionnels sur l&rsquo;ingénierie de détection, l&rsquo;architecture de sécurité, et les systèmes que je construis.">Occasional writing on detection engineering, security architecture, and the systems I build.</p>
 </header>
 
 <section class="prose">
@@ -110,9 +110,9 @@ INDEX_BODY = """<header class="post-head">
     <span class="d"><time datetime="2026-08-28">2026-08-28</time></span>
     <h2><a href="/notes/guardrails-retrieved-by-similarity/"
            data-en="Guardrails retrieved by similarity are guardrails that don&rsquo;t fire"
-           data-fr="Un garde-fou récupéré par similarité est un garde-fou qui ne se déclenche pas"></a></h2>
+           data-fr="Un garde-fou récupéré par similarité est un garde-fou qui ne se déclenche pas">Guardrails retrieved by similarity are guardrails that don&rsquo;t fire</a></h2>
     <p data-en="A rule&rsquo;s trigger condition is not its content. Store policy in a similarity index and your controls fail open, silently &mdash; the same failure mode as a detection rule that never fires."
-       data-fr="La condition de déclenchement d&rsquo;une règle n&rsquo;est pas son contenu. Rangez la politique dans un index de similarité et vos contrôles échouent en silence &mdash; le mode de défaillance d&rsquo;une règle de détection qui ne se déclenche jamais."></p>
+       data-fr="La condition de déclenchement d&rsquo;une règle n&rsquo;est pas son contenu. Rangez la politique dans un index de similarité et vos contrôles échouent en silence &mdash; le mode de défaillance d&rsquo;une règle de détection qui ne se déclenche jamais.">A rule&rsquo;s trigger condition is not its content. Store policy in a similarity index and your controls fail open, silently &mdash; the same failure mode as a detection rule that never fires.</p>
   </li>
 </ul>
 </section>
