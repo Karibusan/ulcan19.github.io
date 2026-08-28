@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+  Same rules as the front page: one file, no build output you cannot read,
+  no third-party anything. The CSP below is enforced by hash, so if you
+  change a byte of the inline style or script, the page stops executing it.
+  Regenerate with build.py rather than editing the hashes by hand.
+
+  Disclosure policy: /.well-known/security.txt
+  - Yan
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-jDM9x6cBSdHw3IlmxhDavpbhiIbKsxoXAGTgVjQn0KA='; style-src 'sha256-35J4e5z7XOuIh4kIiBUbuSPBWTdDoBjlUQrKYLNTdx4='; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes — Yan Urquiza</title>
+<meta name="description" content="Occasional writing on detection engineering, security architecture, and the systems I build.">
+<meta property="og:title" content="Notes — Yan Urquiza">
+<meta property="og:description" content="Occasional writing on detection engineering, security architecture, and the systems I build.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://yan.kitaribu.xyz/notes/">
+<style>
+:root{
+  --bg:#0a0c0e; --bg-2:#101317; --line:#1e242b; --line-2:#2a323b;
+  --fg:#dfe5ec; --fg-dim:#98a3b0; --fg-faint:#68737f;
+  --accent:#7aa2f7; --accent-dim:#3d5a8a; --warm:#e0a458; --good:#6cc39a;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,"JetBrains Mono",Menlo,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  --measure:68ch;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+a:hover{border-bottom-color:var(--accent)}
+.langbar{position:sticky;top:0;z-index:20;background:rgba(10,12,14,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.langbar .wrap{display:flex;justify-content:space-between;align-items:center;height:52px;gap:16px}
+.sig{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-faint);border:0}
+a.sig:hover{color:var(--fg)}
+.langs{display:flex}
+.langs button{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;background:transparent;color:var(--fg-faint);border:1px solid var(--line);padding:5px 11px;cursor:pointer;transition:.15s}
+.langs button:first-child{border-radius:3px 0 0 3px}
+.langs button:last-child{border-radius:0 3px 3px 0;border-left:0}
+.langs button[aria-pressed="true"]{color:var(--bg);background:var(--accent);border-color:var(--accent)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 20px}
+h1{font-size:clamp(30px,4.6vw,46px);line-height:1.1;letter-spacing:-.025em;margin:0 0 22px;font-weight:600;max-width:24ch}
+footer{padding:48px 0 72px;color:var(--fg-faint);font-size:14px;border-top:1px solid var(--line);margin-top:64px}
+.foot-note{font-family:var(--mono);font-size:11.5px;line-height:1.7;max-width:52ch;margin:14px 0 0}
+[data-lang-block]{display:none}
+[data-lang-block].on{display:block}
+.post-head{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+.meta{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-faint);margin:0}
+.standfirst{font-size:clamp(18px,2.2vw,21px);line-height:1.5;color:var(--fg-dim);max-width:46ch;margin:0}
+.prose{padding:48px 0 8px;max-width:var(--measure)}
+.prose h2{font-size:clamp(21px,2.7vw,27px);line-height:1.25;letter-spacing:-.02em;margin:52px 0 16px;font-weight:600}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-size:17.5px;margin:34px 0 10px;font-weight:600;letter-spacing:-.01em}
+.prose p{margin:0 0 18px}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:22px}
+.prose li{margin:0 0 9px}
+.prose strong{color:var(--fg);font-weight:600}
+.prose code{font-family:var(--mono);font-size:.88em;color:var(--warm);background:var(--bg-2);border:1px solid var(--line);border-radius:3px;padding:1px 5px}
+.quote{border-left:2px solid var(--accent-dim);padding:2px 0 2px 20px;margin:0 0 20px;color:var(--fg);font-family:var(--mono);font-size:14.5px;line-height:1.6}
+.callout{border:1px solid var(--line);border-left:2px solid var(--warm);border-radius:0 4px 4px 0;background:var(--bg-2);padding:20px 22px;margin:0 0 22px}
+.callout p:last-child{margin-bottom:0}
+.layers{width:100%;border-collapse:collapse;margin:0 0 22px;font-size:14.5px}
+.layers th,.layers td{text-align:left;padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.layers th{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-faint);font-weight:400}
+.layers td:first-child{color:var(--fg);font-weight:600;white-space:nowrap}
+.layers code{white-space:nowrap}
+.kicker{font-size:19px;line-height:1.5;color:var(--fg);border-top:1px solid var(--line);padding-top:26px;margin:38px 0 0}
+.repo{display:flex;flex-wrap:wrap;gap:10px;margin:34px 0 0}
+.repo a{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;border:1px solid var(--line-2);border-radius:3px;padding:10px 16px;color:var(--fg-dim);transition:.15s}
+.repo a:hover{color:var(--fg);border-color:var(--accent-dim);background:var(--bg-2)}
+.notes-list{list-style:none;margin:0;padding:0;max-width:var(--measure)}
+.notes-list li{border-bottom:1px solid var(--line);padding:26px 0}
+.notes-list li:last-child{border-bottom:0}
+.notes-list .d{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--fg-faint);display:block;margin-bottom:7px}
+.notes-list h2{font-size:20px;margin:0 0 8px;font-weight:600;letter-spacing:-.01em}
+.notes-list h2 a{border:0}
+.notes-list p{color:var(--fg-dim);font-size:15px;margin:0}
+</style>
+</head>
+<body>
+<div class="langbar">
+  <div class="wrap">
+    <a class="sig" href="/">Yan Urquiza</a>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+<header class="post-head">
+  <p class="eyebrow" data-en="Notes" data-fr="Notes"></p>
+  <h1 data-en="Notes" data-fr="Notes"></h1>
+  <p class="standfirst" data-en="Occasional writing on detection engineering, security architecture, and the systems I build."
+     data-fr="Écrits occasionnels sur l&rsquo;ingénierie de détection, l&rsquo;architecture de sécurité, et les systèmes que je construis."></p>
+</header>
+
+<section class="prose">
+<ul class="notes-list">
+  <li>
+    <span class="d"><time datetime="2026-08-28">2026-08-28</time></span>
+    <h2><a href="/notes/guardrails-retrieved-by-similarity/"
+           data-en="Guardrails retrieved by similarity are guardrails that don&rsquo;t fire"
+           data-fr="Un garde-fou récupéré par similarité est un garde-fou qui ne se déclenche pas"></a></h2>
+    <p data-en="A rule&rsquo;s trigger condition is not its content. Store policy in a similarity index and your controls fail open, silently &mdash; the same failure mode as a detection rule that never fires."
+       data-fr="La condition de déclenchement d&rsquo;une règle n&rsquo;est pas son contenu. Rangez la politique dans un index de similarité et vos contrôles échouent en silence &mdash; le mode de défaillance d&rsquo;une règle de détection qui ne se déclenche jamais."></p>
+  </li>
+</ul>
+</section>
+
+<footer>
+  <p><a href="/notes/" data-en="All notes" data-fr="Toutes les notes"></a> &nbsp;·&nbsp; <a href="/" data-en="Home" data-fr="Accueil"></a> &nbsp;·&nbsp; <a href="mailto:ulcan19@pm.me">ulcan19@pm.me</a></p>
+  <p class="foot-note" data-en="No trackers. No analytics. No third-party fonts or scripts. Static files, served as-is."
+     data-fr="Aucun traceur. Aucune analytique. Aucune police ni script tiers. Des fichiers statiques, servis tels quels."></p>
+</footer>
+</div>
+<script>
+(function(){
+  var buttons = document.querySelectorAll('.langs button');
+  var blocks = document.querySelectorAll('[data-lang-block]');
+  var attrs = document.querySelectorAll('[data-en],[data-fr]');
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    blocks.forEach(function(b){ b.classList.toggle('on', b.dataset.langBlock === lang); });
+    attrs.forEach(function(n){
+      var v = n.getAttribute('data-' + lang);
+      if (v !== null) n.textContent = v;
+    });
+    buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    try { localStorage.setItem('yu-lang', lang); } catch(e){}
+  }
+  buttons.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+  var saved = null;
+  try { saved = localStorage.getItem('yu-lang'); } catch(e){}
+  if (!saved) saved = (navigator.language||'en').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en';
+  setLang(saved);
+})();
+</script>
+</body>
+</html>
