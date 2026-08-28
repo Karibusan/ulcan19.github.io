@@ -1,0 +1,110 @@
+<div data-lang-block="en" class="on">
+
+<p class="quote">Never commit a secret in plaintext.</p>
+
+<p>That is a rule your team has written down. Now here is a task:</p>
+
+<p class="quote">Add a Postgres client to the ingestion service.</p>
+
+<p>Compute the cosine similarity between those two strings. It is close to zero. They share no vocabulary, no topic, no surface structure. A top-k retrieval over a store containing that rule and a few thousand other entries will not return it.</p>
+
+<p>So the rule is absent from context at exactly the moment the agent is about to write a connection string.</p>
+
+<p>This is not a bad-embedding problem. A better model will not fix it, because the two texts genuinely are not similar &mdash; the retrieval is working correctly and returning the wrong thing. It is a category error in the architecture.</p>
+
+<h2>Why it&rsquo;s a category error</h2>
+
+<p>Knowledge and rules have different trigger conditions.</p>
+
+<p>A piece of knowledge is relevant when it <strong>resembles</strong> the question. &ldquo;How does our auth flow work&rdquo; should retrieve the auth ADR. Similarity is the right relevance signal, because the thing you need looks like the thing you asked.</p>
+
+<p>A rule is relevant when it <strong>applies</strong> &mdash; when the current activity falls inside its scope. Its trigger condition is a predicate over the situation, not a resemblance to its own text. &ldquo;Never commit a secret in plaintext&rdquo; applies whenever code is being written. Nothing about that predicate is recoverable from the rule&rsquo;s wording.</p>
+
+<p>Retrieval by resemblance answers <em>what looks like this?</em>. Rules need an answer to <em>what applies here?</em>. Those are different queries, and running the second one through machinery built for the first gives you guardrails that fire when they happen to be topically adjacent to the risk, and stay silent otherwise.</p>
+
+<h2>Why this is a security problem, not a tuning problem</h2>
+
+<p>Anyone who has run detection at scale recognises the shape.</p>
+
+<p>A rule that doesn&rsquo;t fire produces no alert. No alert looks identical to no threat. The system reports success in both cases, and the only symptom of the broken one is an absence &mdash; nothing in the logs, nothing on the dashboard, nothing to page on. You find out when something lands in production, or when somebody audits by hand.</p>
+
+<p>Vector-retrieved guardrails have precisely this property. The agent produces plausible output, the retrieval layer returns a normal-looking top-k, no error is raised anywhere, and the policy that should have blocked the action was simply never in the room. Every observable signal says the system worked.</p>
+
+<div class="callout"><p>Controls that fail open, without noise, are the worst class of control. Treating policy as one more thing to look up in a similarity index builds one of those by construction.</p></div>
+
+<h2>The fix is unglamorous: split the store</h2>
+
+<p>Two layers, retrieved differently, because they answer different queries.</p>
+
+<table class="layers">
+<thead><tr><th>Layer</th><th>Size</th><th>Retrieval</th></tr></thead>
+<tbody>
+<tr><td>Rules</td><td>20&ndash;200 entries</td><td><strong>Scrolled in full</strong> by scope filter. Never searched.</td></tr>
+<tr><td>Knowledge</td><td>10<sup>3</sup>&ndash;10<sup>5</sup> chunks</td><td>Semantic search, top-k, filtered by project.</td></tr>
+</tbody>
+</table>
+
+<p>The rules layer is retrieved by payload filter on scope: everything active that applies globally, plus everything scoped to the current project. No ranking, no top-k, no embedding involved at retrieval time.</p>
+
+<p>The objection is cost, and the objection doesn&rsquo;t survive arithmetic. Keep the layer to 20&ndash;200 entries, cap each entry at 200 characters, and the whole thing is a few thousand tokens &mdash; noise next to a modern context window, and cheaper than a single wasted turn spent undoing an action a rule would have prevented.</p>
+
+<p>The knowledge layer keeps everything else: ADRs, transcripts, code, postmortems, references. Similarity is the correct relevance signal there, and it scales.</p>
+
+<p>The split is the whole idea. Everything below is what makes it hold up.</p>
+
+<h2>What a scrollable rule looks like</h2>
+
+<p>Scrolling the whole layer only works if the layer stays small, and it only stays small if the entries are disciplined. Four constraints, all of which are really the same constraint:</p>
+
+<ol>
+<li><strong>Imperative.</strong> One rule per entry, stated as an instruction.</li>
+<li><strong>Falsifiable.</strong> You must be able to say whether it was followed. If two people can disagree about compliance, it isn&rsquo;t a rule.</li>
+<li><strong>Under 200 characters.</strong> Reasoning goes in a separate <code>rationale</code> field, which is stored and never injected.</li>
+<li><strong>No hedging.</strong> &ldquo;Prefer&rdquo;, &ldquo;try to&rdquo;, &ldquo;where possible&rdquo; produce entries that cannot be violated and therefore cannot be enforced. They cost context and buy nothing.</li>
+</ol>
+
+<p>Bad: <em>Favour clean code.</em><br>
+Good: <em>Every public function carries complete type hints; CI fails otherwise.</em></p>
+
+<p>The second one can be checked. The first one is a mood.</p>
+
+<h2>Precedence, because rules conflict</h2>
+
+<p>Once you have a policy layer, you need a resolution order, and you need it written down rather than improvised per call.</p>
+
+<ul>
+<li><strong>Priority.</strong> Hard rule / strong default / preference. A hard rule is not worked around silently; if a session instruction contradicts one, the agent says so before complying.</li>
+<li><strong>Specificity.</strong> Project scope beats domain scope beats global scope.</li>
+<li><strong>Recency</strong>, only as a tie-break at equal specificity.</li>
+<li><strong>Unresolvable conflicts get surfaced, not arbitrated.</strong> Two active rules that genuinely contradict each other is a defect in the policy set. An agent that quietly picks one has hidden the defect instead of reporting it.</li>
+</ul>
+
+<h2>Supersede, never delete</h2>
+
+<p>A rule that stops being true is marked superseded and points at its replacement. It stays in the store, excluded from retrieval by its status.</p>
+
+<p>This costs nothing and buys the history of what you tried and abandoned &mdash; which is the thing that stops a team from relitigating the same decision every eight months. Reserve outright retirement for rules that became meaningless: the project died, the tool is gone.</p>
+
+<h2>The predictable way this rots</h2>
+
+<p>Not data loss. Bloat.</p>
+
+<p>The rules layer accumulates near-duplicates that disagree at the margins, and one day it no longer fits comfortably in context. The tempting fix at that point is to put a vector index in front of it.</p>
+
+<p>Don&rsquo;t. That reintroduces the original failure, and it does it at the exact moment the policy set is at its messiest &mdash; which is when you most need the whole thing visible.</p>
+
+<p>An unscrollable rules layer is a signal to consolidate. Flag pairs above a similarity threshold as merge candidates. Flag rules never retrieved in N days as retirement candidates. Flag rules scoped to projects that no longer exist. Then have a human decide: the output of consolidation is a proposal, never an automatic edit. Silently rewriting your own policy set is a worse failure than the one you started with.</p>
+
+<h2>Scope of the claim</h2>
+
+<p>This isn&rsquo;t specific to any vendor, framework, or vector database. It applies to any agent with both a knowledge store and a policy layer &mdash; which, increasingly, is any agent granted the ability to act.</p>
+
+<p>The question to ask of your own setup is narrow and answerable: <strong>take your most important guardrail, take a task that would violate it, and check whether your retrieval layer actually returns the rule.</strong></p>
+
+<p class="kicker">If it doesn&rsquo;t, you don&rsquo;t have a guardrail. You have a document.</p>
+
+<div class="repo">
+<a href="https://github.com/Karibusan/scoped-memory" rel="noopener">Reference implementation &mdash; schema, ingestion, consolidation</a>
+</div>
+
+</div>
