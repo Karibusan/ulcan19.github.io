@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Yan Urquiza — Cyber Security Engineer</title>
-<meta name="description" content="Cyber security engineer. Security operations, detection engineering and security architecture. Sole owner of the security function at Stock in the Channel.">
+<title>Yan Urquiza — Infrastructure, DevOps &amp; Security Engineer</title>
+<meta name="description" content="Infrastructure, DevOps and security engineer. Twenty-seven years in IT: hardware and support, telecoms core network, development and team leadership, DevOps, security operations. Based in Brive-la-Gaillarde, France.">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Yan Urquiza — Cyber Security Engineer">
-<meta property="og:description" content="I design security systems that answer a specific set of constraints — and I run the one I built.">
+<meta property="og:title" content="Yan Urquiza — Infrastructure, DevOps &amp; Security Engineer">
+<meta property="og:description" content="Twenty-seven years in IT, from the repair bench to the SOC. Based in Brive-la-Gaillarde, France.">
 <meta property="og:type" content="profile">
 <!-- STYLE:START -->
 <style>
@@ -104,6 +104,16 @@ p{margin:0 0 16px}
 .tl-date{font-family:var(--mono);font-size:12px;color:var(--fg-faint);letter-spacing:.06em;display:block;margin-bottom:4px}
 .tl-role{font-size:16.5px;font-weight:600;margin:0 0 2px}
 .tl-org{font-size:14.5px;color:var(--fg-dim);margin:0}
+.tl-desc{font-size:13.5px;color:var(--fg-faint);line-height:1.55;margin:6px 0 0;max-width:60ch}
+
+/* profiles */
+.profiles{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+@media(min-width:760px){.profiles{grid-template-columns:1fr 1fr}}
+.profile{background:var(--bg);padding:30px 28px}
+.profile .tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+.profile p{color:var(--fg-dim);font-size:15px;margin:0 0 10px}
+.profile p:last-child{margin:0}
+.profile .kw{font-family:var(--mono);font-size:12px;color:var(--fg-faint);line-height:1.7}
 
 /* two col */
 .two{display:grid;gap:44px}
@@ -139,18 +149,20 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
 
 <header class="hero">
   <p class="eyebrow"
-     data-en="Cyber Security Engineer — Security Operations &amp; Architecture"
-     data-fr="Ingénieur cybersécurité — Sécurité opérationnelle et architecture"></p>
+     data-en="Infrastructure, DevOps &amp; Security Engineer"
+     data-fr="Ingénieur Infrastructure, DevOps &amp; Sécurité"></p>
   <h1>Yan Urquiza</h1>
   <p class="tagline"
-     data-en="I design security systems that answer a specific set of constraints — and I run the one I built."
-     data-fr="Je conçois des systèmes de sécurité qui répondent à un jeu de contraintes précis. J'opère celui que j'ai construit."></p>
+     data-en="Twenty-seven years in IT, from the repair bench to the SOC."
+     data-fr="Vingt-sept ans d'informatique, de l'atelier au SOC."></p>
   <p class="sub"
-     data-en="Sole owner of the security function at Stock in the Channel: around 160 endpoints and 150 hosted e-commerce storefronts, with posture reported directly to both CEOs and the CTO. Twenty years building systems before I started defending them."
-     data-fr="Seul responsable de la fonction sécurité chez Stock in the Channel : environ 160 postes et 150 boutiques e-commerce hébergées, avec un reporting de la posture directement aux deux PDG et au CTO. Vingt ans à construire des systèmes avant de les défendre."></p>
+     data-en="I started in 1999 behind the counter of a second-hand computer shop. Since then: core network engineering on SFR's mobile network, development and team leadership in London, DevOps and an Azure migration, and from 2022 to 2026 sole ownership of the security function at Stock in the Channel (around 160 endpoints and 150 hosted e-commerce storefronts, reporting to both CEOs and the CTO). Back in France since October 2026, based in Brive-la-Gaillarde, and available now."
+     data-fr="J'ai commencé en 1999 derrière le comptoir d'un magasin d'informatique d'occasion. Depuis : le cœur de réseau mobile de SFR, le développement et l'encadrement d'équipe à Londres, le DevOps et une migration vers Azure, et de 2022 à 2026 la responsabilité, seul, de la fonction sécurité de Stock in the Channel (environ 160 postes et 150 boutiques e-commerce hébergées, reporting aux deux PDG et au CTO). Rentré en France en octobre 2026, je suis installé à Brive-la-Gaillarde et disponible immédiatement."></p>
   <nav class="cta">
+    <a href="#profiles" data-en="Profiles" data-fr="Profils"></a>
+    <a href="#path" data-en="Path" data-fr="Parcours"></a>
     <a href="/notes/" data-en="Notes" data-fr="Notes"></a>
-    <a href="https://uk.linkedin.com/in/yanurquiza" rel="me">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/yanurquiza/" rel="me">LinkedIn</a>
     <a href="https://github.com/gensecaihq/Wazuh-MCP-Server" rel="noopener">Wazuh-MCP-Server</a>
     <a href="mailto:ulcan19@pm.me" data-en="Email" data-fr="Écrire"></a>
   </nav>
@@ -159,15 +171,15 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
 <div class="stats">
   <div class="stat">
     <span class="n">~160</span>
-    <span class="l" data-en="endpoints defended by a single-analyst SOC" data-fr="postes défendus par un SOC à un seul analyste"></span>
+    <span class="l" data-en="endpoints defended by a single-analyst SOC, 2022 to 2026" data-fr="postes défendus par un SOC à un seul analyste, de 2022 à 2026"></span>
   </div>
   <div class="stat">
     <span class="n">~150</span>
     <span class="l" data-en="hosted e-commerce storefronts in scope" data-fr="boutiques e-commerce hébergées dans le périmètre"></span>
   </div>
   <div class="stat">
-    <span class="n">20</span>
-    <span class="l" data-en="years of engineering before the security work" data-fr="ans d'ingénierie avant le travail de sécurité"></span>
+    <span class="n">27</span>
+    <span class="l" data-en="years in IT: hardware, telecoms, development, DevOps, security" data-fr="ans d'informatique : matériel, télécom, développement, DevOps, sécurité"></span>
   </div>
   <div class="stat">
     <span class="n">27001</span>
@@ -175,9 +187,46 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
   </div>
 </div>
 
+<section id="profiles">
+  <p class="sec-label" data-en="Profiles" data-fr="Profils"></p>
+  <h2 data-en="One career, four ways in" data-fr="Un parcours, quatre portes d'entrée"></h2>
+  <p class="lead" data-en="I have done each of these jobs for years, not as a side task. Which one matters depends on what you need."
+     data-fr="J'ai exercé chacun de ces métiers pendant des années, pas en appoint. Celui qui compte dépend de votre besoin."></p>
+  <div class="profiles">
+    <article class="profile">
+      <p class="tag" data-en="DevOps &amp; infrastructure" data-fr="DevOps et infrastructure"></p>
+      <h3 data-en="Run it, automate it, keep it up" data-fr="Exploiter, automatiser, maintenir en service"></h3>
+      <p data-en="At Bordeaux Index I migrated the whole web estate to Microsoft Azure (virtual networks, load balancers, CDN, DNS), built the CI/CD pipelines and set up daily server backups. At Stock in the Channel I patched 123 vulnerabilities across 106 production Debian servers with Ansible, in batches, with pre-flight checks."
+         data-fr="Chez Bordeaux Index, j'ai migré tout le parc web vers Microsoft Azure (réseaux virtuels, répartiteurs de charge, CDN, DNS), construit les chaînes CI/CD et mis en place les sauvegardes journalières des serveurs. Chez Stock in the Channel, j'ai corrigé 123 vulnérabilités sur 106 serveurs Debian en production avec Ansible, par lots, avec contrôles préalables."></p>
+      <p class="kw">Linux (Debian, Ubuntu) · Microsoft Azure (AZ-900) · Ansible · Docker · CI/CD (Azure DevOps, Buddy.works) · Git · Bash · Cloudflare</p>
+    </article>
+    <article class="profile">
+      <p class="tag" data-en="Cyber security" data-fr="Cybersécurité"></p>
+      <h3 data-en="Detect, respond, prove it to an auditor" data-fr="Détecter, répondre, le prouver à un auditeur"></h3>
+      <p data-en="Four years as the only security person for a UK e-commerce platform: monitoring and detection built from scratch, incident response through to the formal report, vulnerability management, authorised penetration tests. I represented the security function through ISO/IEC 27001:2022 certification, awarded in July 2026."
+         data-fr="Quatre ans seul responsable de la sécurité d'une plateforme e-commerce britannique : supervision et détection construites de zéro, réponse à incident jusqu'au rapport formel, gestion des vulnérabilités, tests d'intrusion autorisés. J'ai représenté la fonction sécurité dans la certification ISO/IEC 27001:2022, obtenue en juillet 2026."></p>
+      <p class="kw">SIEM (Wazuh) · MITRE ATT&amp;CK · ISO 27001 · NIST CSF · CIS Controls · MSc Cyber Security &amp; Digital Forensics</p>
+    </article>
+    <article class="profile">
+      <p class="tag" data-en="Development &amp; team leadership" data-fr="Développement et encadrement"></p>
+      <h3 data-en="Write it, then lead the people who write it" data-fr="Écrire le code, puis encadrer ceux qui l'écrivent"></h3>
+      <p data-en="Developer first. At Utility Warehouse, online orders went from 5% to 95% of the company's order volume while I was senior developer. As team lead (2014 to 2016) I recruited, shared out the workload, handled analysis and design, unblocked the team and sat between developers and project managers. The team grew from 6 to 11."
+         data-fr="Développeur d'abord. Chez Utility Warehouse, les commandes en ligne sont passées de 5 % à 95 % du volume de l'entreprise quand j'étais développeur senior. Team lead de 2014 à 2016, j'ai recruté, réparti la charge, pris en main l'analyse et la conception, débloqué l'équipe et fait l'interface entre développeurs et chefs de projet. L'équipe est passée de 6 à 11 personnes."></p>
+      <p class="kw">PHP · Node.js · Python · MySQL · Magento 2 · Symfony</p>
+    </article>
+    <article class="profile">
+      <p class="tag" data-en="IT support, networks &amp; hardware" data-fr="Support, réseaux et matériel"></p>
+      <h3 data-en="Where it started: the bench and the counter" data-fr="Là où tout a commencé : l'atelier et le comptoir"></h3>
+      <p data-en="From 1999 to 2005: PC repair and builds, installs, after-sales and troubleshooting, then opening and running a second-hand computer shop in Lyon (stock, sales, accounts), then small wired and wireless network installs. From 2007 to 2010, the other end of the scale: core network engineering on SFR's mobile network for Nokia Siemens Networks."
+         data-fr="De 1999 à 2005 : réparation et montage de PC, installation, SAV et dépannage, puis l'ouverture et la tenue d'un magasin d'informatique d'occasion à Lyon (stock, vente, comptabilité), puis l'installation de petits réseaux filaires et sans fil. De 2007 à 2010, l'autre bout de l'échelle : le cœur de réseau mobile de SFR, pour Nokia Siemens Networks."></p>
+      <p class="kw">Windows · Linux · TCP/IP, DNS, DHCP · <span data-en="Firewalls, VPN" data-fr="Pare-feux, VPN"></span> · PowerShell · Proxmox · NAS</p>
+    </article>
+  </div>
+</section>
+
 <section id="work">
   <p class="sec-label" data-en="Selected work" data-fr="Travaux choisis"></p>
-  <h2 data-en="Three problems worth the detail" data-fr="Trois problèmes qui méritent le détail"></h2>
+  <h2 data-en="Three security problems worth the detail" data-fr="Trois problèmes de sécurité qui méritent le détail"></h2>
   <p class="lead" data-en="Not a list of tools. Three occasions where the answer was not the obvious one."
      data-fr="Pas une liste d'outils. Trois occasions où la bonne réponse n'était pas l'évidente."></p>
   <div class="cases" style="margin-top:34px">
@@ -196,8 +245,8 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
     <article class="case">
       <p class="tag" data-en="Architecture · Applied AI, local-first" data-fr="Architecture · IA appliquée, en local"></p>
       <h3 data-en="One analyst, 160 hosts: the constraint that designed the platform" data-fr="Un analyste, 160 hôtes : la contrainte qui a conçu la plateforme"></h3>
-      <p data-en="Layered deduplication — exact-hash, burst correlation, vector semantic similarity — with thresholds calibrated by manual precision sampling rather than guesswork. Nothing is discarded: suppressed alerts stay in the SIEM and I review the suppressed set weekly. Triage runs on self-hosted inference by design, so hostnames, accounts and payloads never leave the estate."
-         data-fr="Déduplication en couches — hash exact, corrélation de rafales, similarité sémantique vectorielle — seuils calibrés par échantillonnage manuel plutôt qu'au jugé. Rien n'est jeté : les alertes supprimées restent dans le SIEM et je revois l'ensemble chaque semaine. Le triage tourne sur de l'inférence auto-hébergée par conception : noms d'hôtes, comptes et charges utiles ne quittent jamais le parc."></p>
+      <p data-en="Alert noise reduced in layers, with thresholds calibrated on samples rather than guesswork, so that what reached a human was what needed investigating. Nothing was discarded: suppressed alerts stayed in the SIEM and I reviewed the suppressed set weekly. Triage ran on self-hosted inference by design, so hostnames, accounts and payloads never left the estate."
+         data-fr="Réduction du bruit des alertes par couches, seuils calibrés sur échantillons plutôt qu'au jugé, pour que ce qui arrivait à un humain soit ce qui demandait une investigation. Rien n'était jeté : les alertes supprimées restaient dans le SIEM et je revoyais l'ensemble chaque semaine. Le triage tournait sur de l'inférence auto-hébergée par conception : noms d'hôtes, comptes et charges utiles ne quittaient jamais le parc."></p>
     </article>
   </div>
 </section>
@@ -217,8 +266,8 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
     </div>
     <div class="principle">
       <h3 data-en="Built to be handed over" data-fr="Construit pour être transmis"></h3>
-      <p data-en="Documented well enough that someone else could operate it: a 38-page versioned specification, and runbooks written for named colleagues so each of them can run their own controls without me."
-         data-fr="Documenté pour qu'un autre puisse l'opérer : une spécification versionnée de 38 pages, et des runbooks écrits pour que des collègues nommés opèrent leurs contrôles sans moi."></p>
+      <p data-en="Documented well enough that someone else could operate it: a versioned specification, and runbooks written for named colleagues so each of them can run their own controls without me."
+         data-fr="Documenté pour qu'un autre puisse l'opérer : une spécification versionnée, et des runbooks écrits pour que des collègues nommés opèrent leurs contrôles sans moi."></p>
     </div>
   </div>
 </section>
@@ -238,13 +287,13 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
     </div>
     <div class="cap">
       <h4 data-en="Security operations &amp; tooling ownership" data-fr="Opérations de sécurité et maîtrise de l'outillage"></h4>
-      <p data-en="SIEM manager and indexer across ~160 agents: enrolment hardening, RBAC, upgrade lifecycle, monitoring the monitoring."
-         data-fr="Manager et indexeur SIEM sur ~160 agents : durcissement de l'enrôlement, RBAC, cycle de mise à jour, supervision de l'outillage lui-même."></p>
+      <p data-en="SIEM administration across around 160 endpoints: access control, upgrade lifecycle, monitoring the monitoring."
+         data-fr="Administration du SIEM sur environ 160 postes : contrôle des accès, cycle de mise à jour, supervision de l'outillage lui-même."></p>
     </div>
     <div class="cap">
       <h4 data-en="Log ingestion &amp; source integration" data-fr="Ingestion de logs et intégration de sources"></h4>
-      <p data-en="Firewall syslog, Windows and Linux telemetry, application and scan output. Custom decoders where no native support exists, validated end to end before production."
-         data-fr="Syslog pare-feu, télémétrie Windows et Linux, sorties applicatives et de scan. Décodeurs sur mesure en l'absence de support natif, validés de bout en bout avant production."></p>
+      <p data-en="Firewall, Windows, Linux and application sources. Custom parsing where no native support exists, validated end to end before production."
+         data-fr="Sources pare-feu, Windows, Linux et applicatives. Analyse sur mesure en l'absence de support natif, validée de bout en bout avant production."></p>
     </div>
     <div class="cap">
       <h4 data-en="Incident response &amp; analysis" data-fr="Réponse à incident et analyse"></h4>
@@ -253,18 +302,18 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
     </div>
     <div class="cap">
       <h4 data-en="Automation &amp; applied AI, local-first" data-fr="Automatisation et IA, en local d'abord"></h4>
-      <p data-en="n8n orchestration at production scale; Python/FastAPI, Redis, Qdrant vector search; self-hosted LLM inference with a human in the loop on every response decision."
-         data-fr="Orchestration n8n à l'échelle de production ; Python/FastAPI, Redis, recherche vectorielle Qdrant ; inférence LLM auto-hébergée, humain dans la boucle sur chaque décision de réponse."></p>
+      <p data-en="n8n orchestration in production, Python, and self-hosted LLM inference with a human in the loop on every response decision."
+         data-fr="Orchestration n8n en production, Python, et inférence LLM auto-hébergée, avec un humain dans la boucle sur chaque décision de réponse."></p>
     </div>
     <div class="cap">
       <h4 data-en="Offensive &amp; attack surface" data-fr="Offensif et surface d'attaque"></h4>
-      <p data-en="Authorised penetration testing end to end — scoping, authorisation, grey-box execution, dual-audience reporting, re-test. External attack surface monitoring across 76 public IPs and 545 services."
-         data-fr="Tests d'intrusion autorisés de bout en bout — cadrage, autorisation, boîte grise, rapports interne et client, re-test. Surveillance de la surface externe sur 76 IP publiques et 545 services."></p>
+      <p data-en="Authorised penetration testing end to end — scoping, authorisation, grey-box execution, dual-audience reporting, re-test. External attack surface monitoring."
+         data-fr="Tests d'intrusion autorisés de bout en bout — cadrage, autorisation, boîte grise, rapports interne et client, re-test. Surveillance de la surface d'attaque externe."></p>
     </div>
     <div class="cap">
       <h4 data-en="Cloud, Windows, Linux &amp; networking" data-fr="Cloud, Windows, Linux et réseau"></h4>
-      <p data-en="Azure (AZ-900): virtual networks, load balancers, CDN, DNS. Linux at fleet scale, SonicWall NSA, iptables, WireGuard, Cloudflare. Telecoms core network background."
-         data-fr="Azure (AZ-900) : réseaux virtuels, répartiteurs de charge, CDN, DNS. Linux à l'échelle d'un parc, SonicWall NSA, iptables, WireGuard, Cloudflare. Passé en cœur de réseau télécom."></p>
+      <p data-en="Azure (AZ-900): virtual networks, load balancers, CDN, DNS. Linux at fleet scale, firewalls, VPN, Cloudflare. Telecoms core network background."
+         data-fr="Azure (AZ-900) : réseaux virtuels, répartiteurs de charge, CDN, DNS. Linux à l'échelle d'un parc, pare-feux, VPN, Cloudflare. Passé en cœur de réseau télécom."></p>
     </div>
     <div class="cap">
       <h4 data-en="Assurance, governance &amp; communication" data-fr="Assurance, gouvernance et communication"></h4>
@@ -280,34 +329,64 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
       <p class="sec-label" data-en="Path" data-fr="Parcours"></p>
       <div class="tl">
         <div class="tl-item now">
-          <span class="tl-date">2022 — <span data-en="present" data-fr="aujourd'hui"></span></span>
+          <span class="tl-date">2022 — 2026</span>
           <p class="tl-role">Security Operations / DevSecOps</p>
           <p class="tl-org">Stock in the Channel, London</p>
+          <p class="tl-desc" data-en="Sole owner of the security function: around 160 endpoints and 150 hosted e-commerce storefronts. Monitoring, detection, incident response and vulnerability management built from scratch. ISO/IEC 27001:2022 awarded July 2026." data-fr="Seul responsable de la fonction sécurité : environ 160 postes et 150 boutiques e-commerce hébergées. Supervision, détection, réponse à incident et gestion des vulnérabilités construites de zéro. ISO/IEC 27001:2022 obtenue en juillet 2026."></p>
         </div>
         <div class="tl-item">
           <span class="tl-date">2020 — 2022</span>
           <p class="tl-role">Senior DevOps Engineer</p>
           <p class="tl-org">Bordeaux Index, London</p>
+          <p class="tl-desc" data-en="Migration of the whole web estate to Microsoft Azure. CI/CD pipelines (Azure DevOps, Buddy.works), monitoring, daily server backups." data-fr="Migration de tout le parc web vers Microsoft Azure. Chaînes CI/CD (Azure DevOps, Buddy.works), supervision, sauvegardes journalières des serveurs."></p>
         </div>
         <div class="tl-item">
           <span class="tl-date">2016 — 2020</span>
           <p class="tl-role">Senior Software Engineer</p>
           <p class="tl-org">Bordeaux Index, London</p>
+          <p class="tl-desc" data-en="Modernised the web infrastructure, brought in Cloudflare, ran the Linux servers and the network. Moved the team from SVN to Git and code review." data-fr="Modernisation de l'infrastructure web, intégration de Cloudflare, gestion des serveurs Linux et du réseau. Passage de l'équipe de SVN à Git, avec revue de code."></p>
         </div>
         <div class="tl-item">
           <span class="tl-date">2014 — 2016</span>
           <p class="tl-role">Technical Team Lead</p>
           <p class="tl-org">Telecom Plus / Utility Warehouse, London</p>
+          <p class="tl-desc" data-en="Recruitment, workload planning, analysis and design, unblocking the team, interface between developers and project managers. Team grown from 6 to 11." data-fr="Recrutement, répartition de la charge, analyse et conception, résolution des blocages de l'équipe, interface entre développeurs et chefs de projet. Équipe portée de 6 à 11 personnes."></p>
         </div>
         <div class="tl-item">
           <span class="tl-date">2012 — 2014</span>
           <p class="tl-role">Senior PHP Developer</p>
-          <p class="tl-org">Telecom Plus, London</p>
+          <p class="tl-org">Telecom Plus / Utility Warehouse, London</p>
+          <p class="tl-desc" data-en="Online orders taken from 5% to 95% of the company's order volume. Technical design from specifications, releases, Linux and Apache server configuration." data-fr="Commandes en ligne passées de 5 % à 95 % du volume de l'entreprise. Conception technique à partir des spécifications, mises en production, configuration des serveurs Linux et Apache."></p>
         </div>
         <div class="tl-item">
-          <span class="tl-date">2007 — 2011</span>
+          <span class="tl-date">2010 — 2011</span>
+          <p class="tl-role">PHP Programmer</p>
+          <p class="tl-org">MTL, London</p>
+          <p class="tl-desc" data-en="Built the company's internal CRM in Symfony and designed its database." data-fr="Développement du CRM interne de l'entreprise en Symfony, et conception de sa base de données."></p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">2007 — 2010</span>
           <p class="tl-role" data-en="Telecoms core network engineer" data-fr="Ingénieur cœur de réseau télécom"></p>
-          <p class="tl-org" data-en="SFR / Nokia Siemens R4 migration — Davidson, Astek (Lyon)" data-fr="Migration SFR / Nokia Siemens R4 — Davidson, Astek (Lyon)"></p>
+          <p class="tl-org" data-en="Astek, then Davidson Consulting, for Nokia Siemens Networks / SFR (Lyon)" data-fr="Astek, puis Davidson Consulting, pour Nokia Siemens Networks / SFR (Lyon)"></p>
+          <p class="tl-desc" data-en="Migration of SFR's mobile core network to UMTS Release 4: equipment integration, signalling links, upgrades, call tests, fault diagnosis. Also designed and wrote PLATOON, a planning tool adopted by every operations team at the Lyon CMC." data-fr="Migration du cœur de réseau mobile de SFR vers l'UMTS Release 4 : intégration d'équipements, liens de signalisation, montées de version, tests d'appel, diagnostic de pannes. J'y ai aussi conçu et développé PLATOON, outil de planification adopté par toutes les équipes d'exploitation du CMC de Lyon."></p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">2004 — 2005</span>
+          <p class="tl-role" data-en="Technician" data-fr="Technicien"></p>
+          <p class="tl-org">COM'bac Interactif, Lyon</p>
+          <p class="tl-desc" data-en="Installed and configured multi-station networks, wired and wireless. Built websites. Customer-facing." data-fr="Installation et configuration de réseaux multipostes, filaires et sans fil. Création de sites web. Relation client."></p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">2001 — 2004</span>
+          <p class="tl-role" data-en="Shop manager" data-fr="Responsable de magasin"></p>
+          <p class="tl-org">Occase Info, Lyon</p>
+          <p class="tl-desc" data-en="Opened the Lyon shop: found the premises and fitted them out. Then stock, sales, repairs, after-sales, troubleshooting and the accounts." data-fr="Ouverture du magasin de Lyon : recherche et préparation du local. Puis gestion du stock, vente, réparation, SAV, assistance et dépannage, comptabilité."></p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">1999 — 2001</span>
+          <p class="tl-role" data-en="Sales technician" data-fr="Technicien-vendeur"></p>
+          <p class="tl-org">Occase Info, Tours</p>
+          <p class="tl-desc" data-en="PC repair and builds, hardware and software installs, sales." data-fr="Réparation et montage de PC, installation de matériel et de logiciels, vente."></p>
         </div>
       </div>
     </div>
@@ -316,10 +395,9 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
       <div class="card" style="margin-bottom:20px">
         <h4 data-en="Education &amp; certification" data-fr="Formation et certifications"></h4>
         <ul class="clean">
-          <li data-en="Author, scoped-memory — a two-layer memory store for agents: rules are scrolled by scope, knowledge is searched by similarity" data-fr="Auteur de scoped-memory — mémoire d'agent à deux couches : les règles se scrollent par portée, les connaissances se cherchent par similarité"></li>
           <li>MSc Cyber Security &amp; Digital Forensics
-            <span data-en="University of Portsmouth, 2023 — Merit. Final project: a centralised log management and intrusion detection platform across a live e-commerce estate. The direct precursor to the SOC I operate today."
-                  data-fr="University of Portsmouth, 2023 — mention Merit. Projet de fin d'études : plateforme centralisée de gestion des logs et de détection d'intrusion sur un parc e-commerce en production. Le précurseur direct du SOC que j'opère aujourd'hui."></span>
+            <span data-en="University of Portsmouth, 2023 — Merit. Final project: a centralised log management and intrusion detection platform across a live e-commerce estate. The direct precursor to the SOC I went on to run at Stock in the Channel."
+                  data-fr="University of Portsmouth, 2023 — mention Merit. Projet de fin d'études : plateforme centralisée de gestion des logs et de détection d'intrusion sur un parc e-commerce en production. Le précurseur direct du SOC que j'ai ensuite opéré chez Stock in the Channel."></span>
           </li>
           <li>Microsoft Certified: Azure Fundamentals (AZ-900)
             <span data-en="2026" data-fr="2026"></span>
@@ -327,12 +405,16 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
           <li>ISO/IEC 27001:2022
             <span data-en="Represented the security function through certification, awarded July 2026." data-fr="Représentation de la fonction sécurité dans la certification, obtenue en juillet 2026."></span>
           </li>
+          <li data-en="Analyst programmer diploma (titre professionnel)" data-fr="Titre professionnel d'analyste programmeur">
+            <span>AFPA, Lyon, 2006</span>
+          </li>
         </ul>
       </div>
       <div class="card">
         <h4 data-en="Writing &amp; open source" data-fr="Écrits et open source"></h4>
         <ul class="clean">
           <li data-en="Contributor, Wazuh-MCP-Server" data-fr="Contributeur, Wazuh-MCP-Server"></li>
+          <li data-en="Author, scoped-memory — a two-layer memory store for agents: rules are scrolled by scope, knowledge is searched by similarity" data-fr="Auteur de scoped-memory — mémoire d'agent à deux couches : les règles se scrollent par portée, les connaissances se cherchent par similarité"></li>
           <li data-en="Author, Open Footprint GPT — a public agent for estimating and reducing digital footprint" data-fr="Auteur d'Open Footprint GPT — agent public d'estimation et de réduction de l'empreinte numérique"></li>
           <li data-en="Platform documentation, formal incident reports, TLP:AMBER threat assessments, penetration test reports, operational runbooks, a non-technical security guide for client store owners."
               data-fr="Documentation de plateforme, rapports d'incident formels, évaluations de menace TLP:AMBER, rapports de test d'intrusion, runbooks opérationnels, guide de sécurité non technique pour propriétaires de boutiques clientes.">
@@ -349,10 +431,10 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
     <div>
       <p style="margin:0 0 6px;color:var(--fg)">
         <a href="mailto:ulcan19@pm.me">ulcan19@pm.me</a> &nbsp;·&nbsp;
-        <a href="https://uk.linkedin.com/in/yanurquiza" rel="me">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/yanurquiza/" rel="me">LinkedIn</a>
       </p>
-      <p style="margin:0" data-en="French (native) · English (fluent) · Japanese (elementary). Based in the UK — full right to work."
-         data-fr="Français (langue maternelle) · Anglais (courant) · Japonais (notions). Basé au Royaume-Uni — plein droit de travail."></p>
+      <p style="margin:0" data-en="French (native) · English (fluent, 16 years working in the UK) · Japanese (elementary). Based in Brive-la-Gaillarde, France. Available now."
+         data-fr="Français (langue maternelle) · Anglais (courant, 16 ans de vie professionnelle au Royaume-Uni) · Japonais (notions). Installé à Brive-la-Gaillarde (Corrèze). Disponible immédiatement."></p>
     </div>
     <p class="foot-note"
        data-en="No trackers. No analytics. No third-party fonts or scripts. One static file, served as-is — which felt like the only defensible way to build a security engineer's page."
