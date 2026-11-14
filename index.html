@@ -245,8 +245,8 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
     <article class="case">
       <p class="tag" data-en="Architecture · Applied AI, local-first" data-fr="Architecture · IA appliquée, en local"></p>
       <h3 data-en="One analyst, 160 hosts: the constraint that designed the platform" data-fr="Un analyste, 160 hôtes : la contrainte qui a conçu la plateforme"></h3>
-      <p data-en="Layered deduplication — exact-hash, burst correlation, vector semantic similarity — with thresholds calibrated by manual precision sampling rather than guesswork. Nothing was discarded: suppressed alerts stayed in the SIEM and I reviewed the suppressed set weekly. Triage ran on self-hosted inference by design, so hostnames, accounts and payloads never left the estate."
-         data-fr="Déduplication en couches — hash exact, corrélation de rafales, similarité sémantique vectorielle — seuils calibrés par échantillonnage manuel plutôt qu'au jugé. Rien n'était jeté : les alertes supprimées restaient dans le SIEM et je revoyais l'ensemble chaque semaine. Le triage tournait sur de l'inférence auto-hébergée par conception : noms d'hôtes, comptes et charges utiles ne quittaient jamais le parc."></p>
+      <p data-en="Alert noise reduced in layers, with thresholds calibrated on samples rather than guesswork, so that what reached a human was what needed investigating. Nothing was discarded: suppressed alerts stayed in the SIEM and I reviewed the suppressed set weekly. Triage ran on self-hosted inference by design, so hostnames, accounts and payloads never left the estate."
+         data-fr="Réduction du bruit des alertes par couches, seuils calibrés sur échantillons plutôt qu'au jugé, pour que ce qui arrivait à un humain soit ce qui demandait une investigation. Rien n'était jeté : les alertes supprimées restaient dans le SIEM et je revoyais l'ensemble chaque semaine. Le triage tournait sur de l'inférence auto-hébergée par conception : noms d'hôtes, comptes et charges utiles ne quittaient jamais le parc."></p>
     </article>
   </div>
 </section>
@@ -266,8 +266,8 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
     </div>
     <div class="principle">
       <h3 data-en="Built to be handed over" data-fr="Construit pour être transmis"></h3>
-      <p data-en="Documented well enough that someone else could operate it: a 38-page versioned specification, and runbooks written for named colleagues so each of them can run their own controls without me."
-         data-fr="Documenté pour qu'un autre puisse l'opérer : une spécification versionnée de 38 pages, et des runbooks écrits pour que des collègues nommés opèrent leurs contrôles sans moi."></p>
+      <p data-en="Documented well enough that someone else could operate it: a versioned specification, and runbooks written for named colleagues so each of them can run their own controls without me."
+         data-fr="Documenté pour qu'un autre puisse l'opérer : une spécification versionnée, et des runbooks écrits pour que des collègues nommés opèrent leurs contrôles sans moi."></p>
     </div>
   </div>
 </section>
@@ -287,13 +287,13 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
     </div>
     <div class="cap">
       <h4 data-en="Security operations &amp; tooling ownership" data-fr="Opérations de sécurité et maîtrise de l'outillage"></h4>
-      <p data-en="SIEM manager and indexer across ~160 agents: enrolment hardening, RBAC, upgrade lifecycle, monitoring the monitoring."
-         data-fr="Manager et indexeur SIEM sur ~160 agents : durcissement de l'enrôlement, RBAC, cycle de mise à jour, supervision de l'outillage lui-même."></p>
+      <p data-en="SIEM administration across around 160 endpoints: access control, upgrade lifecycle, monitoring the monitoring."
+         data-fr="Administration du SIEM sur environ 160 postes : contrôle des accès, cycle de mise à jour, supervision de l'outillage lui-même."></p>
     </div>
     <div class="cap">
       <h4 data-en="Log ingestion &amp; source integration" data-fr="Ingestion de logs et intégration de sources"></h4>
-      <p data-en="Firewall syslog, Windows and Linux telemetry, application and scan output. Custom decoders where no native support exists, validated end to end before production."
-         data-fr="Syslog pare-feu, télémétrie Windows et Linux, sorties applicatives et de scan. Décodeurs sur mesure en l'absence de support natif, validés de bout en bout avant production."></p>
+      <p data-en="Firewall, Windows, Linux and application sources. Custom parsing where no native support exists, validated end to end before production."
+         data-fr="Sources pare-feu, Windows, Linux et applicatives. Analyse sur mesure en l'absence de support natif, validée de bout en bout avant production."></p>
     </div>
     <div class="cap">
       <h4 data-en="Incident response &amp; analysis" data-fr="Réponse à incident et analyse"></h4>
@@ -302,18 +302,18 @@ footer{padding:56px 0 72px;color:var(--fg-faint);font-size:14px}
     </div>
     <div class="cap">
       <h4 data-en="Automation &amp; applied AI, local-first" data-fr="Automatisation et IA, en local d'abord"></h4>
-      <p data-en="n8n orchestration at production scale; Python/FastAPI, Redis, Qdrant vector search; self-hosted LLM inference with a human in the loop on every response decision."
-         data-fr="Orchestration n8n à l'échelle de production ; Python/FastAPI, Redis, recherche vectorielle Qdrant ; inférence LLM auto-hébergée, humain dans la boucle sur chaque décision de réponse."></p>
+      <p data-en="n8n orchestration in production, Python, and self-hosted LLM inference with a human in the loop on every response decision."
+         data-fr="Orchestration n8n en production, Python, et inférence LLM auto-hébergée, avec un humain dans la boucle sur chaque décision de réponse."></p>
     </div>
     <div class="cap">
       <h4 data-en="Offensive &amp; attack surface" data-fr="Offensif et surface d'attaque"></h4>
-      <p data-en="Authorised penetration testing end to end — scoping, authorisation, grey-box execution, dual-audience reporting, re-test. External attack surface monitoring across 76 public IPs and 545 services."
-         data-fr="Tests d'intrusion autorisés de bout en bout — cadrage, autorisation, boîte grise, rapports interne et client, re-test. Surveillance de la surface externe sur 76 IP publiques et 545 services."></p>
+      <p data-en="Authorised penetration testing end to end — scoping, authorisation, grey-box execution, dual-audience reporting, re-test. External attack surface monitoring."
+         data-fr="Tests d'intrusion autorisés de bout en bout — cadrage, autorisation, boîte grise, rapports interne et client, re-test. Surveillance de la surface d'attaque externe."></p>
     </div>
     <div class="cap">
       <h4 data-en="Cloud, Windows, Linux &amp; networking" data-fr="Cloud, Windows, Linux et réseau"></h4>
-      <p data-en="Azure (AZ-900): virtual networks, load balancers, CDN, DNS. Linux at fleet scale, SonicWall NSA, iptables, WireGuard, Cloudflare. Telecoms core network background."
-         data-fr="Azure (AZ-900) : réseaux virtuels, répartiteurs de charge, CDN, DNS. Linux à l'échelle d'un parc, SonicWall NSA, iptables, WireGuard, Cloudflare. Passé en cœur de réseau télécom."></p>
+      <p data-en="Azure (AZ-900): virtual networks, load balancers, CDN, DNS. Linux at fleet scale, firewalls, VPN, Cloudflare. Telecoms core network background."
+         data-fr="Azure (AZ-900) : réseaux virtuels, répartiteurs de charge, CDN, DNS. Linux à l'échelle d'un parc, pare-feux, VPN, Cloudflare. Passé en cœur de réseau télécom."></p>
     </div>
     <div class="cap">
       <h4 data-en="Assurance, governance &amp; communication" data-fr="Assurance, gouvernance et communication"></h4>
